@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"cmpt213.assignment2.packagedeliveriestracker"},{"l":"cmpt213.assignment2.packagedeliveriestracker.gson.extras"},{"l":"cmpt213.assignment2.packagedeliveriestracker.model"},{"l":"cmpt213.assignment2.packagedeliveriestracker.textui"}];updateSearchResults();

@@ -1,0 +1,154 @@
+Use Case Option #1:
+When user presses 1 in the main menu, the program loads(desrializes) and displays any objects saved in list.json corresponding to each subclass(book,perishable,electronic) accordingly.
+When using the program for first time, list.json does not exists and upon the first run with or without few packages added, list.json will be created by the program.
+At this stage(when list.json does not exists yet), if the user presses 1, they will see 
+"""""""""""""""""""""""""""""""
+"No packages to show." message. 
+"""""""""""""""""""""""""""""""
+
+Note: If the programmer manually deletes all elements in json including the brackets [], in that case pressing 1 will result the program to run an exception.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because "packageList" is null
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+If list.json contains some elements from previous runs or some packages have been added in the current run, the packages depending on what type they are will be shown, in acsending delivery date order.
+Package number will be shown along.
+"""""""""""""""""""""""""""""""""""""""""
+Package #1
+Package: q
+Notes: q
+Price: $1.0
+Weight: 1.0kg
+Expected Delivery Date: 0001-01-01 01:01
+Delivered? No
+Author Name: 1
+
+Package #2
+Package: e
+Notes: e
+Price: $3.0
+Weight: 3.0kg
+Expected Delivery Date: 3000-03-03 03:03
+Delivered? No
+Environmental Handling Fee: $3.0
+""""""""""""""""""""""""""""""""""""""""
+
+
+
+Use Case Option #2:
+When the user presses 2, first the type of package to be created is asked. The user can press 1 for book, 2 for perishable, and 3 for electronic.
+If they press any other number, they will see:
+
+""""""""""""""""""""""""""""""""""""""""
+Invalid selection. Enter a valid number
+""""""""""""""""""""""""""""""""""""""""
+
+then general information for a new package such as name, notes, price,weight, expected delivery date(year,month,day,hour,minute) are asked in that order, and then specific information
+to that type of package (for example author of the book for Book object) are asked. Finally, a message will be displayed indicating: A nameOfPackage has been added to the list,
+and then the main menu is shown again.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Choose an option by entering 1-7: 
+2
+Enter the type of the package (1:Book, 2:Perishable, 3:Electronic):
+0
+Invalid selection. Enter a valid number
+1
+Enter the name of the book: 
+1
+Enter the notes of the book: 
+1
+Enter the price of the book(in dollar): 
+1
+Enter the weight of the book(in kg): 
+1
+Enter the year of the expected delivery date: 
+1
+Enter the month of the expected delivery date (1-12): 
+1
+Enter the day of the expected delivery date (1-28/29/30/31): 
+1
+Enter the hour of the expected delivery date (0-23): 
+1
+Enter the minute of the expected delivery date (0-59): 
+1
+Enter the author of the book: 
+q
+1 has been added to the list.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Note: If the user enters invalid date, for example, 2022-06-32, they are asked to enter that date again.
+
+"""""""""""""""""""""""""""""""""
+Error: this date does not exist.
+"""""""""""""""""""""""""""""""""
+
+
+
+Use Case Option #3:
+When pressing Remove a Package, if the list is empty, the user is prompted with:
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+There is no package in the list. Add a package first!
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+If it is not empty, then they are shown a list of all packages with numbers associated and sorted based on delivery date ascending. Then they are asked:
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Enter the item number you want to remove (0 to cancel): 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+If they press 0, they are back in main menu, otherwise, if they press invalid number they are prompted with:
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Invalid package number. Please try again!
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+If they press valid number: They are prompted with: PackageName has been removed from the list. And then the package is just removed.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Choose an option by entering 1-7: 
+3
+Package #1
+Package: q
+Notes: q
+Price: $1.0
+Weight: 1.0kg
+Expected Delivery Date: 0001-01-01 01:01
+Delivered? No
+Author Name: 1
+
+Package #2
+Package: 1
+Notes: 1
+Price: $1.0
+Weight: 1.0kg
+Expected Delivery Date: 0001-01-01 01:01
+Delivered? No
+Author Name: q
+
+Package #3
+Package: w
+Notes: w
+Price: $2.0
+Weight: 2.0kg
+Expected Delivery Date: 2022-04-01 03:01
+Delivered? No
+Author Name: 4
+
+Package #4
+Package: e
+Notes: e
+Price: $3.0
+Weight: 3.0kg
+Expected Delivery Date: 3000-03-03 03:03
+Delivered? No
+Environmental Handling Fee: $3.0
+
+Enter the item number you want to remove (0 to cancel): 
+
+5
+Invalid package number. Please try again!
+1
+1 has been removed from the list.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 

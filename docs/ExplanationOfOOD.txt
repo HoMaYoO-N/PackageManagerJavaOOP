@@ -1,0 +1,11 @@
+1) How the packages are created:
+
+When the user presses 2 (to add a package), main entry of the program(PackageDeliveriesTracker class), passes the current packageList along with type of package(1,2,3)to OptionsHandler.
+Options handler creates a new package by passing on the package choice to UserInput class's NewPackageInput (part of textui module).
+In NewPackageInput, the texts for adding details of package are printed, and the input is taken and saved from the user. Depending on package type, extra input is also asked.
+After all of the information are added, depending on package type, the PackageFactory.getInstance method is called along with saved information to create the package. 
+Finally in Options handler's option1 function, the package is added to the end of packageList and new packageList is returned to (PackageDeliveriesTracker.
+
+2) How the packageList is updated:  
+Each time the program runs, it reads the previously saved packages from list.json and each time the program is done executing(user presses 7), list.json is updated with new packages.
+This is done by calls to JSONHandler class(which had all static methods for handling JSON, WriteToJSON, ReadFromJSON) in PackageDeliveriesTracker.
